@@ -54,18 +54,37 @@ public class TileManager : MonoBehaviour
             return tile;
     }
 
-    IEnumerator UpdateDirection() {
-        while(true) 
+IEnumerator UpdateDirection()
+{
+    float targetCurveDirection = _curCurveDirection;
+
+    while (true)
+    {
+        // Generate a new target direction
+        targetCurveDirection = Random.Range(-10, 10) / 10.0f;
+        
+        // Time to smoothly transition to the new direction
+        float transitionTime = 3;
+        float elapsedTime = 0;
+
+        // Gradually change the current direction towards the target direction
+        while (elapsedTime < transitionTime)
         {
-            _curCurveDirection = Random.Range(-10, 10) / 10.0f;
-            foreach(GameObject tile in Roads)
+            _curCurveDirection = Mathf.Lerp(_curCurveDirection, targetCurveDirection, elapsedTime / transitionTime);
+            elapsedTime += Time.deltaTime;
+
+            // Update the direction of each road tile in the queue
+            foreach (GameObject tile in Roads)
             {
                 tile.GetComponent<Road>().UpdateDirection(_curCurveDirection);
             }
 
-            yield return new WaitForSeconds(Random.Range(5, 10));
+            // Wait for the next frame
+            yield return null;
         }
     }
+}
+
 
     // Update is called once per frame
     void Update()
