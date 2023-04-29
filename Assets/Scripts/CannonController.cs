@@ -41,7 +41,7 @@ public class CannonController : MonoBehaviour
         float targetAngle = Mathf.Atan2(targetDirection.x, targetDirection.z) * Mathf.Rad2Deg;
 
         // Set the cannon's Y rotation to the calculated angle
-        cannonTransform.rotation =  Quaternion.Euler(0, targetAngle, 0);
+        cannonTransform.rotation =  Quaternion.Euler(-90, targetAngle - 90, 90);
     }
 
     private void Shoot()
@@ -61,7 +61,12 @@ public class CannonController : MonoBehaviour
         }
 
         Vector3 targetDirection = (targetPoint - cannonTransform.position).normalized;
-        GameObject package = Instantiate(packagePrefab, cannonTransform.position, Quaternion.identity);
+
+        // Add Y offset to the spawn position
+        float yOffset = 0.2f;
+        Vector3 spawnPosition = cannonTransform.position + new Vector3(0, yOffset, 0);
+
+        GameObject package = Instantiate(packagePrefab, spawnPosition, Quaternion.identity);
         package.GetComponent<Rigidbody>().AddForce(targetDirection * shootForce, ForceMode.Impulse);
     }
 }
