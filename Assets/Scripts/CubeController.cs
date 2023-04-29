@@ -56,7 +56,7 @@ public class CubeController : MonoBehaviour
             Rigidbody rb = newCube.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                Vector3 forceDirection = (shootDirection + Vector3.up * 0.2f).normalized; // Add a slight upward angle to the force direction
+                Vector3 forceDirection = (shootDirection).normalized; // Add a slight upward angle to the force direction
                 rb.AddForce(forceDirection * shootForce);
             }
             else
