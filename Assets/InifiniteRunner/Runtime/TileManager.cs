@@ -6,9 +6,11 @@ using System.Windows;
 public class TileManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject RoadTile;
+    GameObject[] RoadTiles;
     [SerializeField]
     Transform PlayerPosition;
+    [SerializeField]
+    Transform SurfaceParent;
     private Queue<GameObject> Roads;
     private int _maxTileNums = 10;
     private int _curTileNums;
@@ -36,21 +38,23 @@ public class TileManager : MonoBehaviour
     {
         while(Roads.Count < _maxTileNums)
         {
-            GameObject tile = InitTile();
+            int idx = Random.Range(0, 2);
+            GameObject tile = InitTile(idx);
             Roads.Enqueue(tile);
         }
     }
 
-    GameObject InitTile()
+    GameObject InitTile(int idx)
     {
-            GameObject tile = Instantiate(RoadTile);
-            tile.transform.position = new Vector3(_initPosition.x, -0.5f, _initPosition.z);
-            _initPosition += tile.transform.up * _roadLength;
+            GameObject tile = Instantiate(RoadTiles[idx]);
+            tile.transform.parent = SurfaceParent;
+            tile.transform.position = new Vector3(_initPosition.x, SurfaceParent.position.y, _initPosition.z);
+            _initPosition += tile.transform.forward * _roadLength;
             tile.SetActive(true);
 
             _lastRoadTile = tile;
 
-            tile.name = (++_curTileNums).ToString();
+            tile.name = RoadTiles[idx].name + (++_curTileNums).ToString();
 
             return tile;
     }
@@ -64,11 +68,12 @@ public class TileManager : MonoBehaviour
             GameObject tile = Roads.Dequeue();
             Destroy(tile);
 
-            GameObject newTile = InitTile();
+            int idx = Random.Range(0, 2);
+            GameObject newTile = InitTile(idx);;
             Roads.Enqueue(newTile);
         }
 
-        float curve = Mathf.Lerp(-3, 3, (Mathf.Sin(Time.time / 5.0f) + 1.0f) / 2.0f);
+        float curve = Mathf.Lerp(0, 0, (Mathf.Sin(Time.time / 5.0f) + 1.0f) / 2.0f);
 
 
             foreach(GameObject tile in Roads)

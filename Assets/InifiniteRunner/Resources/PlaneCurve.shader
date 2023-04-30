@@ -1,7 +1,7 @@
-Shader "Custom/TestCurved" 
+Shader "Custom/PlaneCurve" 
 {
     Properties {
-        _MainTex ("Base (RGB)", 2D) = "white" {}
+        _MainTex ("Base (RGB)", 2D) = "grey" {}
         _Degree("Curve Degree",float) = 50
         _Randomness("Curve direction", float) = 0
     }
@@ -39,6 +39,7 @@ Shader "Custom/TestCurved"
                float3 ObjToCam = (_WorldSpaceCameraPos - WorldPos.xyz);
                float dist = pow(ObjToCam.z / _Degree, 2);
                WorldPos.x += _Randomness * dist; 
+               WorldPos.y -= 0.3 * dist;
 
                v.vertex = mul(unity_WorldToObject, WorldPos);
 

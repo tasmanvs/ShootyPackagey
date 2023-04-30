@@ -5,9 +5,12 @@ using UnityEngine;
 public class CannonController : MonoBehaviour
 {
     [SerializeField] private GameObject packagePrefab;
+    [SerializeField] private GameObject ultraPackagePrefab;
     [SerializeField] private Transform cannonTransform;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float shootForce = 20f;
+
+    [SerializeField] private float ultraShootForce = 100f;
 
 
     // Update is called once per frame
@@ -18,6 +21,11 @@ public class CannonController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
+        }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            UltraShoot();
         }
     }
 
@@ -67,6 +75,34 @@ public class CannonController : MonoBehaviour
         Vector3 spawnPosition = targetDirection + cannonTransform.position + new Vector3(0, yOffset, 0);
 
         GameObject package = Instantiate(packagePrefab, spawnPosition, Quaternion.identity);
+        package.name = "SmallPackage";
         package.GetComponent<Rigidbody>().AddForce(targetDirection * shootForce, ForceMode.Impulse);
+    }
+
+    private void UltraShoot()
+    {
+        RaycastHit hit;
+        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        Vector3 targetPoint;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            targetPoint = hit.point;
+        }
+        else
+        {
+            float defaultDistance = 50f;
+            targetPoint = ray.GetPoint(defaultDistance);
+        }
+
+        Vector3 targetDirection = (targetPoint - cannonTransform.position).normalized;
+
+        // Add Y offset to the spawn position
+        float yOffset = 0.5f;
+        Vector3 spawnPosition = targetDirection + cannonTransform.position + new Vector3(0, yOffset, 0);
+
+        GameObject package = Instantiate(ultraPackagePrefab, spawnPosition, Quaternion.identity);
+        package.name = "UltraPackage";
+        package.GetComponent<Rigidbody>().AddForce(targetDirection * ultraShootForce, ForceMode.Impulse);
     }
 }
