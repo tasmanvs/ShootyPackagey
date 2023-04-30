@@ -18,6 +18,6 @@ public class HousePieces : MonoBehaviour
 
     void OnCollisionEnter(Collision collider)
     {
-        transform.parent.GetComponent<House>().DetectCollision(collider);
+        // transform.parent.GetComponent<House>().DetectCollision(collider);
     }
 }
