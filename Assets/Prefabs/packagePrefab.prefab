@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1058235919756695918}
   - component: {fileID: 3941621703810969022}
   - component: {fileID: 2638331684158386724}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: packagePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
