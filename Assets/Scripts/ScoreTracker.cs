@@ -3,12 +3,13 @@ using TMPro; // Add this namespace
 
 public class ScoreTracker : MonoBehaviour
 {
-    public int score = 0;
+    private int score = 0;
     public TextMeshProUGUI scoreText; // Use TextMeshProUGUI instead of Text
 
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
         UpdateScoreText();
     }
 
