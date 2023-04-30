@@ -59,7 +59,7 @@ public class TileManager : MonoBehaviour
     void Update()
     {
         float dist = Mathf.Abs(Roads.Peek().transform.position.z - PlayerPosition.position.z);
-        if(dist > 5)
+        if(dist > 10)
         {
             GameObject tile = Roads.Dequeue();
             Destroy(tile);
