@@ -7,12 +7,12 @@ public class FollowCamera : MonoBehaviour
     [SerializeField]
     public Transform Player;
 
-    [SerializeField][Range(0.0f, 5.0f)]
+    [SerializeField][Range(0.0f, 10.0f)]
     private float _offset;
     // Start is called before the first frame update
     void Start()
     {
-        _offset = 4.0f;
+        _offset = 6.5f;
     }
 
     // Update is called once per frame
