@@ -64,7 +64,7 @@ public class CannonController : MonoBehaviour
 
         // Add Y offset to the spawn position
         float yOffset = 0.2f;
-        Vector3 spawnPosition = cannonTransform.position + new Vector3(0, yOffset, 0);
+        Vector3 spawnPosition = targetDirection + cannonTransform.position + new Vector3(0, yOffset, 0);
 
         GameObject package = Instantiate(packagePrefab, spawnPosition, Quaternion.identity);
         package.GetComponent<Rigidbody>().AddForce(targetDirection * shootForce, ForceMode.Impulse);
