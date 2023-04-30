@@ -305,24 +305,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7413135369064236046, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
   m_PrefabInstance: {fileID: 1639041187}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &438109829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 438109826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd770a39fefa3643b45076bf088e70a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  packagePrefab: {fileID: 3406108185387783020, guid: b34364481576544fdba135b30b935ce6, type: 3}
-  ultraPackagePrefab: {fileID: 3406108185387783020, guid: b26f0c42bc8789943a68f54630cd5779, type: 3}
-  cannonTransform: {fileID: 1442196210}
-  playerCamera: {fileID: 1429850494}
-  shootForce: 20
-  ultraShootForce: 600
 --- !u!1001 &675701928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -772,11 +754,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 438109828}
   _offset: 1
---- !u!4 &1442196210 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1035868812497263638, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
-  m_PrefabInstance: {fileID: 1639041187}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1488027793
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +869,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2783392210242159438, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1429850494}
+    - target: {fileID: 2783392210242159438, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
+      propertyPath: ultraShootForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783392210242159438, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
+      propertyPath: ultraPackagePrefab
+      value: 
+      objectReference: {fileID: 3406108185387783020, guid: b26f0c42bc8789943a68f54630cd5779, type: 3}
     - target: {fileID: 5537975670554336557, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
       propertyPath: m_Name
       value: CannonVan
@@ -954,9 +943,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5537975670554336557, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 438109827}
-    - targetCorrespondingSourceObject: {fileID: 5537975670554336557, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 438109829}
   m_SourcePrefab: {fileID: 100100000, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
 --- !u!1001 &1947869660
 PrefabInstance:

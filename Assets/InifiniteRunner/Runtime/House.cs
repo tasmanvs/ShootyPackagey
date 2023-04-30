@@ -29,8 +29,6 @@ public class House : MonoBehaviour
 
     public void DetectCollision(Collision collider)
     {
-        Debug.Log($"---------collide in children: { collider.gameObject.name}");
-
         if(collider.gameObject.name == "SmallPackage")
         {
             Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z);
