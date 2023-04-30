@@ -7,6 +7,10 @@ public class House : MonoBehaviour
     [SerializeField]
     GameObject Coin;
 
+    [SerializeField]
+    private ScoreTracker scoreTracker;
+
+
     [SerializeField][Range(0.0f, 10.0f)]
     float Force;
 
@@ -41,11 +45,6 @@ public class House : MonoBehaviour
         {
             SpawnCoins();
             coinsSpawned = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnCoins();
         }
     }
 
@@ -89,6 +88,7 @@ public class House : MonoBehaviour
 
             coinRb.AddForce(forceDirection * Force, ForceMode.Impulse);
         }
+        
+        scoreTracker.IncreaseScore(5);
     }
-
 }
