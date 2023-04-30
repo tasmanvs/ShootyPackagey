@@ -42,26 +42,53 @@ public class House : MonoBehaviour
             SpawnCoins();
             coinsSpawned = true;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SpawnCoins();
+        }
     }
 
     private bool AllPiecesMoved()
     {
+        int total_distance = 0;
         foreach (Transform piece in housePieces)
         {
-            if (Vector3.Distance(initialPositions[piece], piece.position) < distanceThreshold)
-            {
-                return false;
-            }
+            total_distance += (int)Vector3.Distance(piece.position, initialPositions[piece]);
         }
-        return true;
+
+        return (total_distance > distanceThreshold);
     }
 
     private void SpawnCoins()
     {
+        // Spawn position is the center of the pieces
+        Vector3 spawnPosition = Vector3.zero;
+        foreach (Transform piece in housePieces)
+        {
+            spawnPosition += piece.position;
+        }
+
+        spawnPosition /= housePieces.Count;
+
+        // Set the cone angle range
+        float minAngle = -30f;
+        float maxAngle = 30f;
+
         for (int i = 0; i < 5; i++)
         {
-            Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z);
-            Instantiate(Coin, spawnPosition, Quaternion.identity).GetComponent<Rigidbody>().AddForce(new Vector2(Random.Range(-0.5f, 0.5f), 1) * Force);
+            GameObject coin = Instantiate(Coin, spawnPosition, Quaternion.identity);
+            Rigidbody coinRb = coin.GetComponent<Rigidbody>();
+
+            Vector3 forceDirection = Vector3.zero;
+
+            // Also apply random force in the y direction
+            forceDirection.y = Random.Range(0.5f, 1f);
+            forceDirection.x = Random.Range(-0.2f, 0.2f);
+            forceDirection.z = Random.Range(-0.2f, 0.2f);
+
+            coinRb.AddForce(forceDirection * Force, ForceMode.Impulse);
         }
     }
+
 }
