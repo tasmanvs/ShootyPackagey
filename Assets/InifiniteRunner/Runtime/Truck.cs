@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Truck : MonoBehaviour
 {
-    [SerializeField][Range(0.001f, 1)] 
+    [SerializeField][Range(0.0f, 5.0f)] 
     public float _speed;
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = Vector3.zero;
-        _speed = 0.005f;
+        _speed = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * _speed;
-        // Debug.Log($"{transform.position}, {_speed}");
+        transform.position += transform.forward * _speed * Time.deltaTime;
     }
 }

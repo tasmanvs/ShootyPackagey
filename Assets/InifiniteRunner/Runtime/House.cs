@@ -29,7 +29,7 @@ public class House : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Force = 5.0f;
+        Force = 10.0f;
         initialPositions = new Dictionary<Transform, Vector3>();
 
         foreach (Transform piece in housePieces)

@@ -12,14 +12,12 @@ public class TileManager : MonoBehaviour
     [SerializeField]
     Transform SurfaceParent;
     private Queue<GameObject> Roads;
-    private int _maxTileNums = 10;
+    private int _maxTileNums = 15;
     private int _curTileNums;
 
     private int _roadLength = 5;
 
     private Vector3 _initPosition;
-
-    private GameObject _lastRoadTile;
 
     private float _timer = 0f;
     private float updateTime = 3.0f;
@@ -32,31 +30,26 @@ public class TileManager : MonoBehaviour
     {
         _initPosition = PlayerPosition.position;
         Roads = new Queue<GameObject>();
-
     }
     void Start()
     {
         while(Roads.Count < _maxTileNums)
         {
             int idx = Random.Range(0, 2);
-            GameObject tile = InitTile(idx);
-            Roads.Enqueue(tile);
+            InitTile(idx); 
         }
     }
 
-    GameObject InitTile(int idx)
+    void InitTile(int idx)
     {
             GameObject tile = Instantiate(RoadTiles[idx]);
             tile.transform.parent = SurfaceParent;
             tile.transform.position = new Vector3(_initPosition.x, SurfaceParent.position.y, _initPosition.z);
-            _initPosition += tile.transform.forward * _roadLength;
             tile.SetActive(true);
-
-            _lastRoadTile = tile;
-
             tile.name = RoadTiles[idx].name + (++_curTileNums).ToString();
+            Roads.Enqueue(tile);
 
-            return tile;
+            _initPosition += tile.transform.forward * _roadLength;
     }
 
     // Update is called once per frame
@@ -69,18 +62,8 @@ public class TileManager : MonoBehaviour
             Destroy(tile);
 
             int idx = Random.Range(0, 2);
-            GameObject newTile = InitTile(idx);;
-            Roads.Enqueue(newTile);
+            InitTile(idx);
         }
-
-        float curve = Mathf.Lerp(0, 0, (Mathf.Sin(Time.time / 5.0f) + 1.0f) / 2.0f);
-
-
-            foreach(GameObject tile in Roads)
-            {
-                tile.GetComponent<Road>().UpdateDirection(curve);
-            }
-
 
     }
 }

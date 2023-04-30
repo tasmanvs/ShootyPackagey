@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Package : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,13 +18,4 @@ public class Coin : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    void OnCollisionEnter(Collision collision)
-    {
-      if (collision.gameObject.tag == "House")
-      {
-          Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
-      }
-    }
-
 }
