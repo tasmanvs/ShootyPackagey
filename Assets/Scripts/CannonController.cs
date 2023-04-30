@@ -11,6 +11,7 @@ public class CannonController : MonoBehaviour
     [SerializeField] private float shootForce = 20f;
 
     [SerializeField] private float ultraShootForce = 100f;
+    [SerializeField] private LayerMask raycastLayerMask;
 
 
     // Update is called once per frame
@@ -35,7 +36,7 @@ public class CannonController : MonoBehaviour
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
         Vector3 targetPoint;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~raycastLayerMask))
         {
             targetPoint = hit.point;
         }
@@ -51,6 +52,7 @@ public class CannonController : MonoBehaviour
         // Set the cannon's Y rotation to the calculated angle
         cannonTransform.rotation =  Quaternion.Euler(-90, targetAngle - 90, 90);
     }
+
 
     private void Shoot()
     {
@@ -72,7 +74,7 @@ public class CannonController : MonoBehaviour
 
         // Add Y offset to the spawn position
         float yOffset = 0.2f;
-        Vector3 spawnPosition = targetDirection + cannonTransform.position + new Vector3(0, yOffset, 0);
+        Vector3 spawnPosition = targetDirection*2 + cannonTransform.position + new Vector3(0, yOffset, 0);
 
         GameObject package = Instantiate(packagePrefab, spawnPosition, Quaternion.identity);
         package.name = "SmallPackage";
