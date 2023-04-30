@@ -435,6 +435,14 @@ MonoBehaviour:
   Coin: {fileID: 1516206009078322, guid: 4eca7a8ef879cfb41b294a8c0d69ea58, type: 3}
   Force: 0.98
   SmallPackage: {fileID: 3406108185387783020, guid: b34364481576544fdba135b30b935ce6, type: 3}
+  housePieces:
+  - {fileID: 514369374985714952}
+  - {fileID: 4073574967408354880}
+  - {fileID: 3214928543586231500}
+  - {fileID: 6749971491981823831}
+  - {fileID: 8720536432350673970}
+  - {fileID: 1658636891380341480}
+  distanceThreshold: 1
 --- !u!114 &2447320603050575309
 MonoBehaviour:
   m_ObjectHideFlags: 0
