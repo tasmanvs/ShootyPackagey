@@ -30,14 +30,20 @@ Shader "Custom/TestCurved"
                 float4 vertex: SV_POSITION;
             };
 
-             v2f vert (appdata_full v)
+            v2f vert (appdata v)
             {
                v2f o;
-               float4 vPos = mul (UNITY_MATRIX_MV, v.vertex);
-               float zOff = vPos.z/_Degree;
-                    vPos += float4(-15 * _Randomness,0,0,0)*zOff*zOff;
-               o.vertex = mul (UNITY_MATRIX_P, vPos);
-               o.uv = v.texcoord;
+               o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+               float4 WorldPos = mul(unity_ObjectToWorld, v.vertex);
+
+               float3 ObjToCam = (_WorldSpaceCameraPos - WorldPos.xyz);
+               float dist = pow(ObjToCam.z / _Degree, 2);
+               WorldPos.x += _Randomness * dist; 
+               WorldPos.y -= 0.3 * dist;
+
+               v.vertex = mul(unity_WorldToObject, WorldPos);
+
+               o.vertex = UnityObjectToClipPos(v.vertex);
                return o;
             }
 

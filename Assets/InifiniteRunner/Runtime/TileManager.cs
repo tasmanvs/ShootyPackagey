@@ -10,15 +10,19 @@ public class TileManager : MonoBehaviour
     [SerializeField]
     Transform PlayerPosition;
     private Queue<GameObject> Roads;
-    private int _maxTileNums = 4;
+    private int _maxTileNums = 10;
     private int _curTileNums;
 
-    private int _roadLength = 10;
+    private int _roadLength = 5;
 
     private Vector3 _initPosition;
 
     private GameObject _lastRoadTile;
 
+    private float _timer = 0f;
+    private float updateTime = 3.0f;
+
+    [SerializeField][Range(-3.0f, 3.0f)]
     private float _curCurveDirection;
 
     // Start is called before the first frame update
@@ -35,8 +39,6 @@ public class TileManager : MonoBehaviour
             GameObject tile = InitTile();
             Roads.Enqueue(tile);
         }
-
-        StartCoroutine("UpdateDirection");;
     }
 
     GameObject InitTile()
@@ -50,28 +52,14 @@ public class TileManager : MonoBehaviour
 
             tile.name = (++_curTileNums).ToString();
 
-            tile.GetComponent<Road>().UpdateDirection(_curCurveDirection);
             return tile;
-    }
-
-    IEnumerator UpdateDirection() {
-        while(true) 
-        {
-            _curCurveDirection = Random.Range(-10, 10) / 10.0f;
-            foreach(GameObject tile in Roads)
-            {
-                tile.GetComponent<Road>().UpdateDirection(_curCurveDirection);
-            }
-
-            yield return new WaitForSeconds(Random.Range(5, 10));
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        float dist = _lastRoadTile.transform.position.z - PlayerPosition.position.z;
-        if(dist < 25)
+        float dist = Mathf.Abs(Roads.Peek().transform.position.z - PlayerPosition.position.z);
+        if(dist > 5)
         {
             GameObject tile = Roads.Dequeue();
             Destroy(tile);
@@ -79,5 +67,15 @@ public class TileManager : MonoBehaviour
             GameObject newTile = InitTile();
             Roads.Enqueue(newTile);
         }
+
+        float curve = Mathf.Lerp(-3, 3, (Mathf.Sin(Time.time / 5.0f) + 1.0f) / 2.0f);
+
+
+            foreach(GameObject tile in Roads)
+            {
+                tile.GetComponent<Road>().UpdateDirection(curve);
+            }
+
+
     }
 }

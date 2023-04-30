@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RoadTile: {fileID: 2047141869}
   PlayerPosition: {fileID: 886801537}
+  _curCurveDirection: 0
 --- !u!4 &886801537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7240279688274666882, guid: bae0c673aa01b17499599932617431f6, type: 3}
@@ -393,6 +394,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 567360117238467407, guid: 382eff1b08dcfaa4a85e33838493b09c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 567360117238467407, guid: 382eff1b08dcfaa4a85e33838493b09c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -435,6 +440,10 @@ PrefabInstance:
     - target: {fileID: 6985964761726394607, guid: 382eff1b08dcfaa4a85e33838493b09c, type: 3}
       propertyPath: m_Name
       value: Road
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985964761726394607, guid: 382eff1b08dcfaa4a85e33838493b09c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -63,7 +63,7 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Degree: 50
+    - _Degree: 25
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -73,7 +73,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Randomness: 0
+    - _Randomness: 0.05
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

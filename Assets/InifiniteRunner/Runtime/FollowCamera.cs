@@ -12,7 +12,7 @@ public class FollowCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _offset = 2.0f;
+        _offset = 4.0f;
     }
 
     // Update is called once per frame
