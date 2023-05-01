@@ -166,7 +166,7 @@ MonoBehaviour:
   - {fileID: 5819093681772651871}
   - {fileID: 7207991359337533404}
   distanceThreshold: 0.2
-  scoreValue: 1
+  scoreValue: 3
 --- !u!1 &4749247716855591963
 GameObject:
   m_ObjectHideFlags: 0

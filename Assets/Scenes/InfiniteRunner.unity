@@ -1456,6 +1456,14 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1429850494}
+    - target: {fileID: 5204333736288772563, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
+      propertyPath: ultraShootForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5204333736288772563, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
+      propertyPath: ultraPackagePrefab
+      value: 
+      objectReference: {fileID: 3406108185387783020, guid: f540aec78824f41f8afbe331494feaab, type: 3}
     - target: {fileID: 5537975670554336557, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
       propertyPath: m_Name
       value: CannonVan
