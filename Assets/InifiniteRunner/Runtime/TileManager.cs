@@ -12,7 +12,7 @@ public class TileManager : MonoBehaviour
     [SerializeField]
     Transform SurfaceParent;
     private Queue<GameObject> Roads;
-    private int _maxTileNums = 15;
+    private int _maxTileNums = 20;
     private int _curTileNums;
 
     private int _roadLength = 5;
@@ -42,14 +42,14 @@ public class TileManager : MonoBehaviour
 
     void InitTile(int idx)
     {
-            GameObject tile = Instantiate(RoadTiles[idx]);
-            tile.transform.parent = SurfaceParent;
-            tile.transform.position = new Vector3(_initPosition.x, SurfaceParent.position.y, _initPosition.z);
-            tile.SetActive(true);
-            tile.name = RoadTiles[idx].name + (++_curTileNums).ToString();
-            Roads.Enqueue(tile);
+        GameObject tile = Instantiate(RoadTiles[idx]);
+        tile.transform.parent = SurfaceParent;
+        tile.transform.position = new Vector3(_initPosition.x, SurfaceParent.position.y, _initPosition.z);
+        tile.SetActive(true);
+        tile.name = RoadTiles[idx].name + (++_curTileNums).ToString();
+        Roads.Enqueue(tile);
 
-            _initPosition += tile.transform.forward * _roadLength;
+        _initPosition += tile.transform.forward * _roadLength;
     }
 
     // Update is called once per frame
