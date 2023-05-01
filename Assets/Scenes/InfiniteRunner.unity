@@ -710,7 +710,7 @@ RectTransform:
   m_GameObject: {fileID: 752270335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3598798, y: 0.3598798, z: 0.3598798}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1685800020}
@@ -2019,6 +2019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreTracker
       objectReference: {fileID: 0}
+    - target: {fileID: 5726916017029766959, guid: 8fd57b4401078dc4796bb6b1a17520bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fd57b4401078dc4796bb6b1a17520bc, type: 3}
 --- !u!1 &1888214465
@@ -2127,7 +2131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2111101625
 RectTransform:
   m_ObjectHideFlags: 0
