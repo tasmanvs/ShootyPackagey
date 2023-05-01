@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.314367, g: 0.28811795, b: 0.24732843, a: 1}
+  m_IndirectSpecularColor: {r: 0.3142779, g: 0.28805274, b: 0.2472991, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -508,11 +508,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   packagePrefab: {fileID: 3406108185387783020, guid: b34364481576544fdba135b30b935ce6, type: 3}
-  ultraPackagePrefab: {fileID: 0}
+  ultraPackagePrefab: {fileID: 3406108185387783020, guid: b26f0c42bc8789943a68f54630cd5779, type: 3}
   cannonTransform: {fileID: 1860182177}
   playerCamera: {fileID: 1429850494}
   shootForce: 20
-  ultraShootForce: 100
+  ultraShootForce: 500
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 0
