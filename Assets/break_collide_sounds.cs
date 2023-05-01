@@ -21,22 +21,24 @@ public class break_collide_sounds : MonoBehaviour
         {
             return;
         }
+        
+        var rb = gameObject.GetComponent<Rigidbody>();
 
-
-        float impact = collision.relativeVelocity.magnitude;
-
-        Debug.Log("Impact: " + impact);
-
+        float impact = collision.impulse.magnitude / rb.mass;
 
         source.pitch = Random.Range(0.6f, 1.4f);
         float volume = Random.Range(0.5f, 1.0f);
 
-        if (impact < 19)
+        if (impact < 5) //just carboard noises
+        {
+            return;
+        }
+        if (impact < 10)
         {
             int sound_index = Random.Range(0, small_sounds.Length);
             source.PlayOneShot(small_sounds[sound_index], volume);
         }
-        else if (impact < 50)
+        else if (impact < 20)
         {
             int sound_index = Random.Range(0, medium_sounds.Length);
             source.PlayOneShot(medium_sounds[sound_index], volume);
