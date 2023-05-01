@@ -57,16 +57,31 @@ public class CoinExplosion : MonoBehaviour
 
     private void SpawnCoins()
     {
-        ScoreTracker.Instance.IncreaseScore(scoreValue);
+        if (ScoreTracker.Instance != null)
+        {
+            ScoreTracker.Instance.IncreaseScore(scoreValue);
+        }
+        else
+        {
+            Debug.LogWarning("ScoreTracker not found in scene");
+        }
 
         // Spawn position is the center of the pieces
         Vector3 spawnPosition = Vector3.zero;
+        int numPieces = 0;
         foreach (Transform piece in pieces)
         {
-            spawnPosition += piece.position;
+            if (piece != null)
+            {
+                spawnPosition += piece.position;
+                numPieces++;
+            }
         }
 
-        spawnPosition /= pieces.Count;
+        if (numPieces > 0)
+        {
+            spawnPosition /= numPieces;
+        }
 
         // Set the cone angle range
         float minAngle = -30f;
