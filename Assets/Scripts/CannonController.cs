@@ -8,11 +8,15 @@ public class CannonController : MonoBehaviour
     [SerializeField] private GameObject ultraPackagePrefab;
     [SerializeField] private Transform cannonTransform;
     [SerializeField] private Camera playerCamera;
-    [SerializeField] private float shootForce = 20f;
+    [SerializeField] public float shootForce = 20f;
 
     [SerializeField] private float ultraShootForce = 100f;
     [SerializeField] private LayerMask raycastLayerMask;
 
+    void Start()
+    {
+        playerCamera = Camera.main;
+    }
 
     // Update is called once per frame
     void Update()
