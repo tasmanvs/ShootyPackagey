@@ -352,6 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5763089747401565576}
   - component: {fileID: 7682134424449118556}
+  - component: {fileID: 5203544247867801724}
   m_Layer: 0
   m_Name: house
   m_TagString: Untagged
@@ -387,7 +388,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4949820185589628722}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25ef88dd78962504ab33099f2ffadb4f, type: 3}
   m_Name: 
@@ -404,6 +405,30 @@ MonoBehaviour:
   - {fileID: 8720536432350673970}
   - {fileID: 1658636891380341480}
   distanceThreshold: 0.5
+--- !u!114 &5203544247867801724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4949820185589628722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9716b0304ac4ffab914971c65d79ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Coin: {fileID: 1516206009078322, guid: 4eca7a8ef879cfb41b294a8c0d69ea58, type: 3}
+  scoreTracker: {fileID: 5726916017029766958, guid: 8fd57b4401078dc4796bb6b1a17520bc, type: 3}
+  Force: 10
+  pieces:
+  - {fileID: 514369374985714952}
+  - {fileID: 4073574967408354880}
+  - {fileID: 3214928543586231500}
+  - {fileID: 6749971491981823831}
+  - {fileID: 8720536432350673970}
+  - {fileID: 1658636891380341480}
+  distanceThreshold: 0.5
+  scoreValue: 5
 --- !u!1 &5187390880151416744
 GameObject:
   m_ObjectHideFlags: 0

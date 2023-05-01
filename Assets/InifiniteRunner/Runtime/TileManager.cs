@@ -35,7 +35,7 @@ public class TileManager : MonoBehaviour
     {
         while(Roads.Count < _maxTileNums)
         {
-            int idx = Random.Range(0, 2);
+            int idx = Random.Range(0, RoadTiles.Length);
             InitTile(idx); 
         }
     }
@@ -61,7 +61,7 @@ public class TileManager : MonoBehaviour
             GameObject tile = Roads.Dequeue();
             Destroy(tile);
 
-            int idx = Random.Range(0, 2);
+            int idx = Random.Range(0, RoadTiles.Length);
             InitTile(idx);
         }
 

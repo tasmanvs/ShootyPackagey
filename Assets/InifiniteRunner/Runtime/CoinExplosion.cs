@@ -60,6 +60,8 @@ public class CoinExplosion : MonoBehaviour
 
     private void SpawnCoins()
     {
+        scoreTracker.IncreaseScore(scoreValue);
+
         // Spawn position is the center of the pieces
         Vector3 spawnPosition = Vector3.zero;
         foreach (Transform piece in pieces)
@@ -87,7 +89,5 @@ public class CoinExplosion : MonoBehaviour
 
             coinRb.AddForce(forceDirection * Force, ForceMode.Impulse);
         }
-        
-        scoreTracker.IncreaseScore(scoreValue);
     }
 }
