@@ -17,21 +17,26 @@ public class break_collide_sounds : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(!collision.gameObject.CompareTag("package"))
+        if (!collision.gameObject.CompareTag("package"))
         {
             return;
         }
 
+
         float impact = collision.relativeVelocity.magnitude;
+
+        Debug.Log("Impact: " + impact);
+
+
         source.pitch = Random.Range(0.6f, 1.4f);
         float volume = Random.Range(0.5f, 1.0f);
 
-        if (impact < 2)
+        if (impact < 19)
         {
             int sound_index = Random.Range(0, small_sounds.Length);
             source.PlayOneShot(small_sounds[sound_index], volume);
         }
-        else if (impact < 2)
+        else if (impact < 50)
         {
             int sound_index = Random.Range(0, medium_sounds.Length);
             source.PlayOneShot(medium_sounds[sound_index], volume);
