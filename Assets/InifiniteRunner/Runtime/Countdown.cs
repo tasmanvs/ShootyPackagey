@@ -12,7 +12,7 @@ public class Countdown : MonoBehaviour
     [SerializeField]
     Button RestartButton;
     public TextMeshProUGUI TimeText; // Use TextMeshProUGUI instead of Text
-    private int _countdown = 5;
+    private int _countdown = 60;
 
     private float _startTime;
     // Start is called before the first frame update
