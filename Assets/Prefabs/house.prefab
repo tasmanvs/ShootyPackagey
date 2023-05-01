@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4290246644212526641}
   - component: {fileID: 4048642162782962025}
   - component: {fileID: 8874107199217532134}
+  - component: {fileID: 8682840941611654875}
   m_Layer: 0
   m_Name: LeftWall
   m_TagString: Untagged
@@ -114,6 +115,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.020000009, z: 0.02}
   m_Center: {x: 0, y: -0.000000059604645, z: 4.656613e-10}
+--- !u!114 &8682840941611654875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078930177186783318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fd97ad47865be478724d8c40da9238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  small_sounds:
+  - {fileID: 8300000, guid: abada59c2bad0ed499f990adb7486bdf, type: 3}
+  - {fileID: 8300000, guid: b116404af22746b4ab93c31c86d29ab7, type: 3}
+  - {fileID: 8300000, guid: 620e76802ff3db44d9503057f1261e63, type: 3}
+  medium_sounds:
+  - {fileID: 8300000, guid: f80779b83ead5c1418981cfed0e97ae4, type: 3}
+  - {fileID: 8300000, guid: 06c30b37140286349b86d7fca8c7a30c, type: 3}
+  - {fileID: 8300000, guid: 7a53fe5fe18028c4084d5af51c840230, type: 3}
+  big_sounds:
+  - {fileID: 8300000, guid: ab6f21516a80e9d4a85b8d031d35fd57, type: 3}
 --- !u!1 &2928515169927732628
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +228,7 @@ GameObject:
   - component: {fileID: 7926926896322881212}
   - component: {fileID: 9056320548745437549}
   - component: {fileID: 7846980450516435853}
+  - component: {fileID: 3557132008737887732}
   m_Layer: 0
   m_Name: Chimney
   m_TagString: Untagged
@@ -306,6 +330,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3557132008737887732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163838909583232270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fd97ad47865be478724d8c40da9238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  small_sounds:
+  - {fileID: 8300000, guid: abada59c2bad0ed499f990adb7486bdf, type: 3}
+  - {fileID: 8300000, guid: b116404af22746b4ab93c31c86d29ab7, type: 3}
+  - {fileID: 8300000, guid: 620e76802ff3db44d9503057f1261e63, type: 3}
+  medium_sounds:
+  - {fileID: 8300000, guid: f80779b83ead5c1418981cfed0e97ae4, type: 3}
+  - {fileID: 8300000, guid: 06c30b37140286349b86d7fca8c7a30c, type: 3}
+  - {fileID: 8300000, guid: 7a53fe5fe18028c4084d5af51c840230, type: 3}
+  big_sounds:
+  - {fileID: 8300000, guid: ab6f21516a80e9d4a85b8d031d35fd57, type: 3}
 --- !u!1 &3777733978576745000
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +365,7 @@ GameObject:
   - component: {fileID: 6890890463435170329}
   - component: {fileID: 830098216484812958}
   - component: {fileID: 2665879384406038442}
+  - component: {fileID: 798924908321958389}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -420,6 +467,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.026139375, z: 0.019999996}
   m_Center: {x: 0, y: -0.003069689, z: -4.656613e-10}
+--- !u!114 &798924908321958389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777733978576745000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fd97ad47865be478724d8c40da9238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  small_sounds:
+  - {fileID: 8300000, guid: abada59c2bad0ed499f990adb7486bdf, type: 3}
+  - {fileID: 8300000, guid: b116404af22746b4ab93c31c86d29ab7, type: 3}
+  - {fileID: 8300000, guid: 620e76802ff3db44d9503057f1261e63, type: 3}
+  medium_sounds:
+  - {fileID: 8300000, guid: f80779b83ead5c1418981cfed0e97ae4, type: 3}
+  - {fileID: 8300000, guid: 06c30b37140286349b86d7fca8c7a30c, type: 3}
+  - {fileID: 8300000, guid: 7a53fe5fe18028c4084d5af51c840230, type: 3}
+  big_sounds:
+  - {fileID: 8300000, guid: ab6f21516a80e9d4a85b8d031d35fd57, type: 3}
 --- !u!1 &4897078630419545242
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +502,7 @@ GameObject:
   - component: {fileID: 1787358738671931292}
   - component: {fileID: 2256330467995264022}
   - component: {fileID: 8157676485423399495}
+  - component: {fileID: 6661032610758159693}
   m_Layer: 0
   m_Name: Roof
   m_TagString: Untagged
@@ -534,6 +604,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.030230707, y: 0.030230701, z: 0.0053613936}
   m_Center: {x: 0, y: 0, z: -0.0073193014}
+--- !u!114 &6661032610758159693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4897078630419545242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fd97ad47865be478724d8c40da9238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  small_sounds:
+  - {fileID: 8300000, guid: abada59c2bad0ed499f990adb7486bdf, type: 3}
+  - {fileID: 8300000, guid: b116404af22746b4ab93c31c86d29ab7, type: 3}
+  - {fileID: 8300000, guid: 620e76802ff3db44d9503057f1261e63, type: 3}
+  medium_sounds:
+  - {fileID: 8300000, guid: f80779b83ead5c1418981cfed0e97ae4, type: 3}
+  - {fileID: 8300000, guid: 06c30b37140286349b86d7fca8c7a30c, type: 3}
+  - {fileID: 8300000, guid: 7a53fe5fe18028c4084d5af51c840230, type: 3}
+  big_sounds:
+  - {fileID: 8300000, guid: ab6f21516a80e9d4a85b8d031d35fd57, type: 3}
 --- !u!1 &5439515942436104199
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +639,7 @@ GameObject:
   - component: {fileID: 3080585927235645360}
   - component: {fileID: 6228515629124280105}
   - component: {fileID: 4451093735046589515}
+  - component: {fileID: 1484880582824753698}
   m_Layer: 0
   m_Name: RightWall
   m_TagString: Untagged
@@ -648,6 +741,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.020000009, z: 0.02}
   m_Center: {x: -0.000000007450581, y: 0, z: 0}
+--- !u!114 &1484880582824753698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439515942436104199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fd97ad47865be478724d8c40da9238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  small_sounds:
+  - {fileID: 8300000, guid: abada59c2bad0ed499f990adb7486bdf, type: 3}
+  - {fileID: 8300000, guid: b116404af22746b4ab93c31c86d29ab7, type: 3}
+  - {fileID: 8300000, guid: 620e76802ff3db44d9503057f1261e63, type: 3}
+  medium_sounds:
+  - {fileID: 8300000, guid: f80779b83ead5c1418981cfed0e97ae4, type: 3}
+  - {fileID: 8300000, guid: 06c30b37140286349b86d7fca8c7a30c, type: 3}
+  - {fileID: 8300000, guid: 7a53fe5fe18028c4084d5af51c840230, type: 3}
+  big_sounds:
+  - {fileID: 8300000, guid: ab6f21516a80e9d4a85b8d031d35fd57, type: 3}
 --- !u!1 &8938449285032721179
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +776,7 @@ GameObject:
   - component: {fileID: 3318918033112950421}
   - component: {fileID: 7897940135176294136}
   - component: {fileID: 3736441892611927180}
+  - component: {fileID: 1450437278928732014}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -762,3 +878,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.019999998, z: 0.019999996}
   m_Center: {x: 0.000000007450581, y: 0.000000029802322, z: 4.656613e-10}
+--- !u!114 &1450437278928732014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8938449285032721179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fd97ad47865be478724d8c40da9238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  small_sounds:
+  - {fileID: 8300000, guid: abada59c2bad0ed499f990adb7486bdf, type: 3}
+  - {fileID: 8300000, guid: b116404af22746b4ab93c31c86d29ab7, type: 3}
+  - {fileID: 8300000, guid: 620e76802ff3db44d9503057f1261e63, type: 3}
+  medium_sounds:
+  - {fileID: 8300000, guid: f80779b83ead5c1418981cfed0e97ae4, type: 3}
+  - {fileID: 8300000, guid: 06c30b37140286349b86d7fca8c7a30c, type: 3}
+  - {fileID: 8300000, guid: 7a53fe5fe18028c4084d5af51c840230, type: 3}
+  big_sounds:
+  - {fileID: 8300000, guid: ab6f21516a80e9d4a85b8d031d35fd57, type: 3}
