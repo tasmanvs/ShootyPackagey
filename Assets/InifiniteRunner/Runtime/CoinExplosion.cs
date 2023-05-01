@@ -2,26 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class House : MonoBehaviour
+public class CoinExplosion : MonoBehaviour
 {
     [SerializeField]
     GameObject Coin;
 
-    [SerializeField]
-    private ScoreTracker scoreTracker;
-
-
     [SerializeField][Range(0.0f, 10.0f)]
-    float Force;
+    float Force = 10.0f;
 
     [SerializeField]
-    GameObject SmallPackage;
-
-    [SerializeField]
-    List<Transform> housePieces;
+    List<Transform> pieces;
 
     [SerializeField]
     float distanceThreshold = 1f;
+
+    [SerializeField]
+    private int scoreValue = 5;
 
     private Dictionary<Transform, Vector3> initialPositions;
     private bool coinsSpawned = false;
@@ -29,10 +25,10 @@ public class House : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Force = 10.0f;
+        Force = 5.0f;
         initialPositions = new Dictionary<Transform, Vector3>();
 
-        foreach (Transform piece in housePieces)
+        foreach (Transform piece in pieces)
         {
             initialPositions[piece] = piece.position;
         }
@@ -51,7 +47,7 @@ public class House : MonoBehaviour
     private bool AllPiecesMoved()
     {
         int total_distance = 0;
-        foreach (Transform piece in housePieces)
+        foreach (Transform piece in pieces)
         {
             total_distance += (int)Vector3.Distance(piece.position, initialPositions[piece]);
         }
@@ -61,20 +57,22 @@ public class House : MonoBehaviour
 
     private void SpawnCoins()
     {
+        ScoreTracker.Instance.IncreaseScore(scoreValue);
+
         // Spawn position is the center of the pieces
         Vector3 spawnPosition = Vector3.zero;
-        foreach (Transform piece in housePieces)
+        foreach (Transform piece in pieces)
         {
             spawnPosition += piece.position;
         }
 
-        spawnPosition /= housePieces.Count;
+        spawnPosition /= pieces.Count;
 
         // Set the cone angle range
         float minAngle = -30f;
         float maxAngle = 30f;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < scoreValue; i++)
         {
             GameObject coin = Instantiate(Coin, spawnPosition, Quaternion.identity);
             Rigidbody coinRb = coin.GetComponent<Rigidbody>();
@@ -88,7 +86,5 @@ public class House : MonoBehaviour
 
             coinRb.AddForce(forceDirection * Force, ForceMode.Impulse);
         }
-        
-        scoreTracker.IncreaseScore(5);
     }
 }

@@ -5,13 +5,12 @@ using UnityEngine;
 public class Truck : MonoBehaviour
 {
     [SerializeField][Range(0.0f, 5.0f)] 
-    public float _speed;
+    public float _speed = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = Vector3.zero;
-        _speed = 1.0f;
     }
 
     // Update is called once per frame

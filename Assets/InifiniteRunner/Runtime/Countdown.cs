@@ -21,7 +21,6 @@ public class Countdown : MonoBehaviour
         Time.timeScale = 1;
         _startTime = Time.time;
         RestartButton.onClick.AddListener(Restart);
-
     }
 
     // Update is called once per frame
@@ -41,6 +40,9 @@ public class Countdown : MonoBehaviour
 
     void Restart()
     {
+        EndCanvas.SetActive(false);
+        Start();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }
