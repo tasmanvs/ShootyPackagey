@@ -14,7 +14,7 @@ public class CannonController : MonoBehaviour
 
     [SerializeField] private float ultraShootForce = 100f;
     [SerializeField] private LayerMask raycastLayerMask;
-    public AudioClip fling_sound;
+    [SerializeField] private AudioClip fling_sound;
     AudioSource audio_source;
 
     void Start()
