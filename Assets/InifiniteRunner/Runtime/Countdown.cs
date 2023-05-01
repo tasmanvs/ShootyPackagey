@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // Add this namespace
-
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Countdown : MonoBehaviour
 {
 
     [SerializeField]
     GameObject EndCanvas;
+    [SerializeField]
+    Button RestartButton;
     public TextMeshProUGUI TimeText; // Use TextMeshProUGUI instead of Text
     private int _countdown = 60;
 
@@ -16,7 +18,10 @@ public class Countdown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         _startTime = Time.time;
+        RestartButton.onClick.AddListener(Restart);
+
     }
 
     // Update is called once per frame
@@ -32,5 +37,10 @@ public class Countdown : MonoBehaviour
             Time.timeScale = 0;
             EndCanvas.SetActive(true);
         }
+    }
+
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

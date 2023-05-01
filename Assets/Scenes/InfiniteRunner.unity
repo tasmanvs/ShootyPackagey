@@ -733,6 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EndCanvas: {fileID: 2111101624}
+  RestartButton: {fileID: 586601923}
   TimeText: {fileID: 1714471177}
 --- !u!224 &1396599983 stripped
 RectTransform:
