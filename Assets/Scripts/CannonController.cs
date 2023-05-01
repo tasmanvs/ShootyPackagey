@@ -17,6 +17,8 @@ public class CannonController : MonoBehaviour
     [SerializeField] private AudioClip fling_sound;
     AudioSource audio_source;
 
+    [SerializeField] private GameObject reticle;
+
     void Start()
     {
         playerCamera = Camera.main;
@@ -30,50 +32,32 @@ public class CannonController : MonoBehaviour
     {
         if(Time.timeScale != 0.0f)
         {
-            RotateCannon();
+            Vector3 targetPoint = FindTarget();
+
+            Vector3 targetDirection = (targetPoint - cannonTransform.position).normalized;
+
+            RotateCannon(targetDirection);
 
             if (Input.GetMouseButtonDown(0))
             {
-                Shoot();
+                Shoot(targetDirection);
             }
 
             if(Input.GetMouseButtonDown(1))
             {
-                UltraShoot();
+                UltraShoot(targetDirection);
             }
         }
 
     }
 
-    private void RotateCannon()
+    private Vector3 FindTarget()
     {
         RaycastHit hit;
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+
         Vector3 targetPoint;
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~raycastLayerMask))
-        {
-            targetPoint = hit.point;
-        }
-        else
-        {
-            float defaultDistance = 50f;
-            targetPoint = ray.GetPoint(defaultDistance);
-        }
-
-        Vector3 targetDirection = (targetPoint - cannonTransform.position).normalized;
-        float targetAngle = Mathf.Atan2(targetDirection.x, targetDirection.z) * Mathf.Rad2Deg;
-
-        // Set the cannon's Y rotation to the calculated angle
-        cannonTransform.rotation =  Quaternion.Euler(-90, targetAngle - 90, 90);
-    }
-
-
-    private void Shoot()
-    {
-        RaycastHit hit;
-        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
-        Vector3 targetPoint;
 
         if (Physics.Raycast(ray, out hit))
         {
@@ -85,8 +69,23 @@ public class CannonController : MonoBehaviour
             targetPoint = ray.GetPoint(defaultDistance);
         }
 
-        Vector3 targetDirection = (targetPoint - cannonTransform.position).normalized;
+        reticle.transform.LookAt(playerCamera.transform);
+        reticle.transform.position = targetPoint;
 
+        return targetPoint;
+    }
+
+
+    private void RotateCannon(Vector3 targetDirection)
+    {
+        float targetAngle = Mathf.Atan2(targetDirection.x, targetDirection.z) * Mathf.Rad2Deg;
+
+        // Set the cannon's Y rotation to the calculated angle
+        cannonTransform.rotation =  Quaternion.Euler(-90, targetAngle - 90, 90);
+    }
+
+    private void Shoot(Vector3 targetDirection)
+    {
         // Add Y offset to the spawn position
         float yOffset = 0.2f;
         Vector3 spawnPosition = targetDirection*2 + cannonTransform.position + new Vector3(0, yOffset, 0);
@@ -101,24 +100,8 @@ public class CannonController : MonoBehaviour
         audio_source.PlayOneShot(fling_sound, volume);
     }
 
-    private void UltraShoot()
+    private void UltraShoot(Vector3 targetDirection)
     {
-        RaycastHit hit;
-        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
-        Vector3 targetPoint;
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            targetPoint = hit.point;
-        }
-        else
-        {
-            float defaultDistance = 50f;
-            targetPoint = ray.GetPoint(defaultDistance);
-        }
-
-        Vector3 targetDirection = (targetPoint - cannonTransform.position).normalized;
-
         // Add Y offset to the spawn position
         float yOffset = 0.5f;
         Vector3 spawnPosition = targetDirection + cannonTransform.position + new Vector3(0, yOffset, 0);

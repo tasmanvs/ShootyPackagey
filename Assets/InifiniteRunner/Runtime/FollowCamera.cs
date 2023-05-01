@@ -22,17 +22,19 @@ public class FollowCamera : MonoBehaviour
     void Update()
     {
         var mousePos = Input.mousePosition;
-        float mouse_normal_x = (mousePos.x / Screen.width) - 0.5f;
-        float mouse_normal_y = (mousePos.y / Screen.height) - 0.5f;
+        float mouse_normal_x = Mathf.Clamp((mousePos.x / Screen.width), 0f, 1f) - 0.5f;
+        float mouse_normal_y = Mathf.Clamp((mousePos.y / Screen.height), 0f, 1f) - 0.5f;
 
-        float target_cam_swing_x = -mouse_normal_x * 4;
-        current_cam_swing_x = current_cam_swing_x * .9f + target_cam_swing_x * .1f;
+        float target_cam_swing_x = -mouse_normal_x;
+
+        float delta_swing = (target_cam_swing_x - current_cam_swing_x) * 1.9f * Time.deltaTime;
+        current_cam_swing_x += delta_swing;
 
         Vector3 newPosition = Player.position - Player.forward * _offset;
         newPosition.y = transform.position.y;
-        newPosition.x += current_cam_swing_x;
+        newPosition.x += current_cam_swing_x*5;
 
-        transform.rotation = (Quaternion.Euler(0f , mouse_normal_x * 45f,  0f));
+        transform.rotation = (Quaternion.Euler(0f , -current_cam_swing_x * 45f,  0f));
 
         transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * 10.0f);
     }
