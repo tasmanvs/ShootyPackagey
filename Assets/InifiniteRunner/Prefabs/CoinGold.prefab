@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 135506371905761694}
   - component: {fileID: 6119106082336282711}
   - component: {fileID: -2505756182750740860}
+  - component: {fileID: -7209005662494914009}
   m_Layer: 2
   m_Name: CoinGold
   m_TagString: Untagged
@@ -242,3 +243,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a358d6f8fc6bb4ab79a993b51ece3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7209005662494914009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516206009078322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8e84ab1e2711644bf67f8e4b9a38a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: d0aacae5c50ea374e946a345f9e01776, type: 3}
+  - {fileID: 8300000, guid: ec4933e846835ec4c82c204f61b50626, type: 3}
+  - {fileID: 8300000, guid: a50f9a4f9029ed34a9076280e2f34dac, type: 3}
+  - {fileID: 8300000, guid: 83209ba71da627447801f4f30c21a7d9, type: 3}
