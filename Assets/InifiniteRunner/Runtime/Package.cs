@@ -10,6 +10,12 @@ public class Package : MonoBehaviour
     void Start()
     {
         int material_index = Random.Range(0, random_materials.Length);
+        // Check if we are in bounds
+        if (material_index < 0 || material_index >= random_materials.Length)
+        {
+            material_index = 0;
+        }
+        
         GetComponentInChildren<MeshRenderer>().material = random_materials[material_index];
     }
 

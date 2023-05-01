@@ -30,7 +30,7 @@ public class Countdown : MonoBehaviour
     GameObject Cannon;
 
     public TextMeshProUGUI TimeText; // Use TextMeshProUGUI instead of Text
-    private int _countdown = 1;
+    private int _countdown = 60;
 
     private float _packageMass = 1;
     private float _cannonSpeed = 20;
