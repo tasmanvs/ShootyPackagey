@@ -13,7 +13,7 @@ public class Package : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y < 0)
+        if(transform.position.y < -100)
         {
             Destroy(gameObject);
         }

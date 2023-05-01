@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ef88dd78962504ab33099f2ffadb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Coin: {fileID: 1516206009078322, guid: 33e59dc562c27c049a3b6f816af9f82e, type: 3}
+  Coin: {fileID: 1516206009078322, guid: 4eca7a8ef879cfb41b294a8c0d69ea58, type: 3}
   scoreTracker: {fileID: 5726916017029766958, guid: 8fd57b4401078dc4796bb6b1a17520bc, type: 3}
   Force: 10
   SmallPackage: {fileID: 3406108185387783020, guid: b34364481576544fdba135b30b935ce6, type: 3}
