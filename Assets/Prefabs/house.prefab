@@ -124,6 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2589567223459923758}
   - component: {fileID: 1854757510823858199}
+  - component: {fileID: 2381135799218459304}
   m_Layer: 0
   m_Name: house
   m_TagString: Untagged
@@ -175,6 +176,22 @@ MonoBehaviour:
   - {fileID: 8868097063319468110}
   distanceThreshold: 1
   scoreValue: 5
+--- !u!114 &2381135799218459304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2928515169927732628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c63700c9d22364fb50ebd3802c2e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  random_materials:
+  - {fileID: 2100000, guid: 126bf00d6958245bcae547f515da8758, type: 2}
+  - {fileID: 2100000, guid: f9e7f1ef95495464980de39966bf70e7, type: 2}
+  - {fileID: 2100000, guid: 663bf57ef67a95340a30be81e91fb1ad, type: 2}
 --- !u!1 &3163838909583232270
 GameObject:
   m_ObjectHideFlags: 0
