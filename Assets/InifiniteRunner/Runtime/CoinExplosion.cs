@@ -60,7 +60,7 @@ public class CoinExplosion : MonoBehaviour
 
     private void SpawnCoins()
     {
-        scoreTracker.IncreaseScore(scoreValue);
+        ScoreTracker.Instance.IncreaseScore(scoreValue);
 
         // Spawn position is the center of the pieces
         Vector3 spawnPosition = Vector3.zero;

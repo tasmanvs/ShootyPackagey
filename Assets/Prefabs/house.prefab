@@ -352,7 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5763089747401565576}
   - component: {fileID: 7682134424449118556}
-  - component: {fileID: 5203544247867801724}
+  - component: {fileID: 1493359679724905730}
   m_Layer: 0
   m_Name: house
   m_TagString: Untagged
@@ -405,7 +405,7 @@ MonoBehaviour:
   - {fileID: 8720536432350673970}
   - {fileID: 1658636891380341480}
   distanceThreshold: 0.5
---- !u!114 &5203544247867801724
+--- !u!114 &1493359679724905730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,7 +427,7 @@ MonoBehaviour:
   - {fileID: 6749971491981823831}
   - {fileID: 8720536432350673970}
   - {fileID: 1658636891380341480}
-  distanceThreshold: 0.5
+  distanceThreshold: 1
   scoreValue: 5
 --- !u!1 &5187390880151416744
 GameObject:

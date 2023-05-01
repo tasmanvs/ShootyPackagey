@@ -1,19 +1,32 @@
 using UnityEngine;
-using TMPro; // Add this namespace
+using TMPro;
 
 public class ScoreTracker : MonoBehaviour
 {
-    private int score = 0;
-    public TextMeshProUGUI scoreText; // Use TextMeshProUGUI instead of Text
+    public static ScoreTracker Instance { get; private set; }
 
-    // Start is called before the first frame update
+    private int score = 0;
+    public TextMeshProUGUI scoreText;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         score = 0;
         UpdateScoreText();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
