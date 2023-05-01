@@ -58,6 +58,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1924400521523223098}
     m_Modifications:
+    - target: {fileID: 1854757510823858199, guid: c6bc75f3cd7e04e7fad13523ebcbde6f, type: 3}
+      propertyPath: scoreValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2589567223459923758, guid: c6bc75f3cd7e04e7fad13523ebcbde6f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -190,6 +194,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 073ea56fa410b4ac2ad14052882a2236, type: 2}
+    - target: {fileID: 2886320530775643034, guid: d4c6b0bb62b31d242a89bfe55a2f5e0d, type: 3}
+      propertyPath: scoreValue
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3552701022076009830, guid: d4c6b0bb62b31d242a89bfe55a2f5e0d, type: 3}
       propertyPath: m_Name
       value: mailbox
@@ -474,7 +482,7 @@ MonoBehaviour:
   pieces:
   - {fileID: 6703198676171769302}
   distanceThreshold: 1
-  scoreValue: 10
+  scoreValue: 15
 --- !u!4 &6703198676171769302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4423150665692857185, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}

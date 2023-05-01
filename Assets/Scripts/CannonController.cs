@@ -10,7 +10,7 @@ public class CannonController : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float shootForce = 20f;
 
-    [SerializeField] private float ultraShootForce = 100f;
+    [SerializeField] private float ultraShootForce = 500f;
     [SerializeField] private LayerMask raycastLayerMask;
 
 
@@ -28,6 +28,8 @@ public class CannonController : MonoBehaviour
 
             if(Input.GetMouseButtonDown(1))
             {
+                // Big boxes come at a cost
+                ScoreTracker.Instance.IncreaseScore(-5);
                 UltraShoot();
             }
         }
