@@ -393,6 +393,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2465122543696692423, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5537975670554336557, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
       propertyPath: m_Name
       value: CannonVan
