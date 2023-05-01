@@ -17,17 +17,21 @@ public class CannonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotateCannon();
-
-        if (Input.GetMouseButtonDown(0))
+        if(Time.timeScale != 0.0f)
         {
-            Shoot();
+            RotateCannon();
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Shoot();
+            }
+
+            if(Input.GetMouseButtonDown(1))
+            {
+                UltraShoot();
+            }
         }
 
-        if(Input.GetMouseButtonDown(1))
-        {
-            UltraShoot();
-        }
     }
 
     private void RotateCannon()
