@@ -295,8 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   packagePrefab: {fileID: 3406108185387783020, guid: b34364481576544fdba135b30b935ce6, type: 3}
-  ultraPackagePrefab: {fileID: 0}
-  reticle: {fileID: 7625144231312939640}
+  ultraPackagePrefab: {fileID: 3406108185387783020, guid: b26f0c42bc8789943a68f54630cd5779, type: 3}
   cannonTransform: {fileID: 7569458324725639554}
   playerCamera: {fileID: 0}
   shootForce: 20
@@ -305,6 +304,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   fling_sound: {fileID: 8300000, guid: 2189a309ae092ff4f9117ad9639f19f2, type: 3}
+  reticle: {fileID: 7625144231312939640}
 --- !u!4 &2989844004841528957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47ef670da4847cf45ba0754fdc53fa71, type: 3}

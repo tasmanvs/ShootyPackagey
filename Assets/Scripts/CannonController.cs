@@ -12,7 +12,7 @@ public class CannonController : MonoBehaviour
 
     private Countdown GameManager;
 
-    [SerializeField] private float ultraShootForce = 100f;
+    [SerializeField] private float ultraShootForce = 500f;
     [SerializeField] private LayerMask raycastLayerMask;
     [SerializeField] private AudioClip fling_sound;
     AudioSource audio_source;
@@ -109,5 +109,13 @@ public class CannonController : MonoBehaviour
         GameObject package = Instantiate(ultraPackagePrefab, spawnPosition, Quaternion.identity);
         package.name = "UltraPackage";
         package.GetComponent<Rigidbody>().AddForce(targetDirection * ultraShootForce, ForceMode.Impulse);
+    
+    
+        float volume = Random.Range(0.5f, 1.0f);
+        audio_source.pitch = Random.Range(0.6f, 1.4f);
+
+        audio_source.PlayOneShot(fling_sound, volume);
+
+        ScoreTracker.Instance.IncreaseScore(-5);
     }
 }

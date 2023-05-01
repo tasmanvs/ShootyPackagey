@@ -58,6 +58,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1924400521523223098}
     m_Modifications:
+    - target: {fileID: 2886320530775643034, guid: d4c6b0bb62b31d242a89bfe55a2f5e0d, type: 3}
+      propertyPath: scoreValue
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3552701022076009830, guid: d4c6b0bb62b31d242a89bfe55a2f5e0d, type: 3}
       propertyPath: m_Name
       value: mailbox (2)
@@ -389,6 +393,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1924400521523223098}
     m_Modifications:
+    - target: {fileID: 2886320530775643034, guid: d4c6b0bb62b31d242a89bfe55a2f5e0d, type: 3}
+      propertyPath: scoreValue
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3552701022076009830, guid: d4c6b0bb62b31d242a89bfe55a2f5e0d, type: 3}
       propertyPath: m_Name
       value: mailbox (1)

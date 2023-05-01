@@ -78,7 +78,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 732edb7ae414ada41ab92e18caf291e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  random_materials: []
+  random_materials:
+  - {fileID: 2100000, guid: 983664ec4a6e9294bb4b1ef745781b56, type: 2}
+  - {fileID: 2100000, guid: f0c17f8e47d196547a2f669332167c53, type: 2}
+  - {fileID: 2100000, guid: 848d12b3370ea4540b12abe0586ec43b, type: 2}
+  - {fileID: 2100000, guid: 42cc30ca7efa5412a96923ae388aec74, type: 2}
+  - {fileID: 2100000, guid: 106fc035c92d0de479a927db679eb89b, type: 2}
 --- !u!114 &6292341093839077089
 MonoBehaviour:
   m_ObjectHideFlags: 0

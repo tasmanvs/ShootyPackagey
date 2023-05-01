@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 073ea56fa410b4ac2ad14052882a2236, type: 2}
+    - target: {fileID: 2886320530775643034, guid: d4c6b0bb62b31d242a89bfe55a2f5e0d, type: 3}
+      propertyPath: scoreValue
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3552701022076009830, guid: d4c6b0bb62b31d242a89bfe55a2f5e0d, type: 3}
       propertyPath: m_Name
       value: mailbox
