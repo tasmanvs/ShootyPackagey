@@ -44,6 +44,7 @@ public class Countdown : MonoBehaviour
         Time.timeScale = 1;
         _startTime = Time.time;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ScoreTracker.Instance.ResetScore();
     }
 
 }
