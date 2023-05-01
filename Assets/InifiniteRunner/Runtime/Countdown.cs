@@ -33,7 +33,7 @@ public class Countdown : MonoBehaviour
     private int _countdown = 60;
 
     private float _packageMass = 1;
-    private float _cannonSpeed = 20;
+    public float CannonSpeed = 20;
 
     private float _startTime;
     // Start is called before the first frame update
@@ -48,13 +48,9 @@ public class Countdown : MonoBehaviour
         Mass.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "package mass: " + _packageMass.ToString();
 
         Speed.onClick.AddListener(AddSpeed);
-        Speed.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Cannon speed: " + _cannonSpeed.ToString();
+        Speed.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Cannon speed: " + CannonSpeed.ToString();
 
         Package.GetComponent<Rigidbody>().mass = _packageMass;
-
-        Debug.Log($"canno is null {Cannon.GetComponent<CannonController>() == null}");
-
-        Cannon.transform.Find("cannon_transform/rail_cannon").gameObject.GetComponent<CannonController>().shootForce = _cannonSpeed;
 
         Speed.interactable = true;
         Mass.interactable = true;
@@ -84,11 +80,11 @@ public class Countdown : MonoBehaviour
     {
         PlusButton.gameObject.SetActive(true);
         PlusButton.transform.position = Speed.transform.position + new Vector3(150, 0, 0);
-        _cannonSpeed += 10;
+        CannonSpeed += 10;
 
         Mass.interactable = false;
 
-        Speed.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Cannon speed: " + _cannonSpeed.ToString();
+        Speed.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Cannon speed: " + CannonSpeed.ToString();
     }
 
     // Update is called once per frame

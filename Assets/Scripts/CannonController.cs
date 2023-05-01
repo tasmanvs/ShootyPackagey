@@ -8,7 +8,9 @@ public class CannonController : MonoBehaviour
     [SerializeField] private GameObject ultraPackagePrefab;
     [SerializeField] private Transform cannonTransform;
     [SerializeField] private Camera playerCamera;
-    [SerializeField] public float shootForce = 20f;
+    [SerializeField] public float shootForce;
+
+    private Countdown GameManager;
 
     [SerializeField] private float ultraShootForce = 100f;
     [SerializeField] private LayerMask raycastLayerMask;
@@ -16,6 +18,8 @@ public class CannonController : MonoBehaviour
     void Start()
     {
         playerCamera = Camera.main;
+        GameManager = GameObject.Find("ScoreTracker").GetComponent<Countdown>();
+        shootForce = GameManager.CannonSpeed;
     }
 
     // Update is called once per frame
