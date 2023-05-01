@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3142779, g: 0.28805274, b: 0.2472991, a: 1}
+  m_IndirectSpecularColor: {r: 0.314367, g: 0.28811795, b: 0.24732843, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1322,6 +1322,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5204333736288772563, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1429850494}
     - target: {fileID: 5537975670554336557, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
       propertyPath: m_Name
       value: CannonVan
