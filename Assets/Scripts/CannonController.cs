@@ -12,10 +12,13 @@ public class CannonController : MonoBehaviour
 
     [SerializeField] private float ultraShootForce = 100f;
     [SerializeField] private LayerMask raycastLayerMask;
+    public AudioClip fling_sound;
+    AudioSource audio_source;
 
     void Start()
     {
         playerCamera = Camera.main;
+        audio_source = gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -87,6 +90,11 @@ public class CannonController : MonoBehaviour
         GameObject package = Instantiate(packagePrefab, spawnPosition, Quaternion.identity);
         package.name = "SmallPackage";
         package.GetComponent<Rigidbody>().AddForce(targetDirection * shootForce, ForceMode.Impulse);
+
+        float volume = Random.Range(0.5f, 1.0f);
+        audio_source.pitch = Random.Range(0.6f, 1.4f);
+
+        audio_source.PlayOneShot(fling_sound, volume);
     }
 
     private void UltraShoot()
