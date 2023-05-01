@@ -21,7 +21,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"/Users/tasman/DeliveryCannon/WebGL Builds;;;;;;;;;\"}"
+                "value": "{\"m_Value\":\"/Users/tasman/DeliveryCannon/delivery_cannon_0.2.0;/Users/tasman/DeliveryCannon/WebGL Builds;;;;;;;;\"}"
             }
         ]
     }
