@@ -12,7 +12,7 @@ public class Countdown : MonoBehaviour
     [SerializeField]
     Button RestartButton;
     public TextMeshProUGUI TimeText; // Use TextMeshProUGUI instead of Text
-    private int _countdown = 60;
+    private int _countdown = 5;
 
     private float _startTime;
     // Start is called before the first frame update
@@ -21,7 +21,6 @@ public class Countdown : MonoBehaviour
         Time.timeScale = 1;
         _startTime = Time.time;
         RestartButton.onClick.AddListener(Restart);
-
     }
 
     // Update is called once per frame
@@ -41,6 +40,9 @@ public class Countdown : MonoBehaviour
 
     void Restart()
     {
+        EndCanvas.SetActive(false);
+        Start();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }
