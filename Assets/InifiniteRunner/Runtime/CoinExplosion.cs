@@ -7,11 +7,8 @@ public class CoinExplosion : MonoBehaviour
     [SerializeField]
     GameObject Coin;
 
-    [SerializeField]
-    private ScoreTracker scoreTracker;
-
     [SerializeField][Range(0.0f, 10.0f)]
-    float Force;
+    float Force = 10.0f;
 
     [SerializeField]
     List<Transform> pieces;
