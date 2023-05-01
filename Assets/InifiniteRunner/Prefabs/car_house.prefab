@@ -483,6 +483,28 @@ MonoBehaviour:
   - {fileID: 6703198676171769302}
   distanceThreshold: 1
   scoreValue: 15
+--- !u!114 &6488420388444220834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3224133344217537434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fd97ad47865be478724d8c40da9238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  small_sounds:
+  - {fileID: 8300000, guid: abada59c2bad0ed499f990adb7486bdf, type: 3}
+  - {fileID: 8300000, guid: b116404af22746b4ab93c31c86d29ab7, type: 3}
+  - {fileID: 8300000, guid: 620e76802ff3db44d9503057f1261e63, type: 3}
+  medium_sounds:
+  - {fileID: 8300000, guid: f80779b83ead5c1418981cfed0e97ae4, type: 3}
+  - {fileID: 8300000, guid: 06c30b37140286349b86d7fca8c7a30c, type: 3}
+  - {fileID: 8300000, guid: 7a53fe5fe18028c4084d5af51c840230, type: 3}
+  big_sounds:
+  - {fileID: 8300000, guid: ab6f21516a80e9d4a85b8d031d35fd57, type: 3}
 --- !u!4 &6703198676171769302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4423150665692857185, guid: 36e318435b4a6bc4d8a2ab3554d383ed, type: 3}
