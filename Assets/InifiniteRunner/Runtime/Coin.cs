@@ -13,18 +13,10 @@ public class Coin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y < 0)
+        if(transform.position.y < -100)
         {
             Destroy(gameObject);
         }
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-      if (collision.gameObject.tag == "House")
-      {
-          Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
-      }
     }
 
 }
